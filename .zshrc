@@ -48,7 +48,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'ls --color $realpath'
 
 ### Aliasses
-alias ls='ls --color'
+alias ls='ls -la --color'
 alias py='python3'
 
 ### Starship init
