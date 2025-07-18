@@ -50,6 +50,7 @@ zstyle ':fzf-tab:complete:ls:*' fzf-preview 'ls --color $realpath'
 ### Aliasses
 alias ls='ls -la --color'
 alias py='python3'
+alias ff='fastfetch'
 
 ### Starship init
 eval "$(starship init zsh)"
