@@ -18,6 +18,8 @@ export PATH
 
 export STARSHIP_CONFIG=~/.config/starship.toml
 
+export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/flatpak/exports/share:${HOME}/.local/share/flatpak/exports/share"
+
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -66,3 +68,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+
+export PATH=$PATH:/home/luihh/.spicetify
