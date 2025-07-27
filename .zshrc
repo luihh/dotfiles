@@ -15,6 +15,7 @@ autoload -Uz _zinit
 ### Exports
 path+=('/home/luihh/.local/bin')
 export PATH
+export PATH=$PATH:/home/luihh/.spicetify
 
 export STARSHIP_CONFIG=~/.config/starship.toml
 
@@ -26,6 +27,14 @@ export VISUAL=nvim
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/luihh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -60,13 +69,13 @@ eval "$(starship init zsh)"
 ### ZOXIDE init
 eval "$(zoxide init zsh)"
 
-# pnpm
-export PNPM_HOME="/home/luihh/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# fnm
+FNM_PATH="/home/luihh/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+# fnm end
 
-
-export PATH=$PATH:/home/luihh/.spicetify
+### FNM init
+eval "$(fnm env --use-on-cd --shell zsh)"
