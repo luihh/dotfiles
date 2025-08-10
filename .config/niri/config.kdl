@@ -6,7 +6,7 @@ input {
     }
 
     mouse {
-        accel-speed -0.69
+        accel-speed -0.67
         accel-profile "flat"
     }
 }
@@ -46,10 +46,15 @@ prefer-no-csd
 
 environment {
     DISPLAY ":0"
+    QT_QPA_PLATFORM "wayland"
 }
 
 hotkey-overlay {
     skip-at-startup
+}
+
+overview {
+	backdrop-color "#11111b"
 }
 
 animations {
