@@ -6,7 +6,7 @@ input {
     }
 
     mouse {
-        accel-speed -0.67
+        accel-speed -0.6
         accel-profile "flat"
     }
 }
@@ -84,7 +84,7 @@ window-rule {
 binds {
     Mod+Shift+0 { show-hotkey-overlay; }
 
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
