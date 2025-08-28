@@ -13,9 +13,7 @@
     "backlight",
     "battery",
     "clock",
-    "temperature",
-    "custom/lock",
-    "custom/power"
+    "temperature"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
