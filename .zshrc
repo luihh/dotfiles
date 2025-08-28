@@ -12,6 +12,12 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+### Aliasses
+alias ls='ls -la --color'
+alias py='python3'
+alias ff='fastfetch'
+alias ssh='kitty +kitten ssh'
+
 ### Exports
 path+=('/home/luihh/.local/bin')
 export PATH
@@ -23,18 +29,6 @@ export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/flatpak/exports/share:${HOME}/.l
 
 export EDITOR=nvim
 export VISUAL=nvim
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-export PNPM_HOME="/home/luihh/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -58,17 +52,13 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'ls --color $realpath'
 
-### Aliasses
-alias ls='ls -la --color'
-alias py='python3'
-alias ff='fastfetch'
-
 ### Starship init
 eval "$(starship init zsh)"
 
 ### ZOXIDE init
 eval "$(zoxide init zsh)"
 
+### FNM init
 # fnm
 FNM_PATH="/home/luihh/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
@@ -77,8 +67,14 @@ if [ -d "$FNM_PATH" ]; then
 fi
 # fnm end
 
-### FNM init
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+### PNPM
+export PNPM_HOME="/home/luihh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 ### Yazi cwd thing
 function y() {
