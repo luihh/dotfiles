@@ -1,22 +1,22 @@
 input {
     keyboard {
         xkb {
-		layout "latam"
+		        layout "latam"
         }
     }
 
     mouse {
-        accel-speed -0.6
         accel-profile "flat"
+        accel-speed -0.75
     }
 }
 
 output "HDMI-A-1" {
-	position x=0 y=0
+	  position x=0 y=0
 }
 
 output "DP-2" {
-	position x=1600 y=0
+	  position x=1600 y=0
 }
 
 layout {
@@ -59,8 +59,8 @@ overview {
 
 animations {
     window-open {
-	duration-ms 150
-	curve "linear"
+	      duration-ms 150
+	      curve "linear"
     }
 }
 
@@ -82,8 +82,6 @@ window-rule {
 }
 
 binds {
-    Mod+Shift+0 { show-hotkey-overlay; }
-
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
@@ -137,23 +135,20 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
 
     Mod+Tab { focus-workspace-previous; }
 
-    Mod+BraceLeft  { consume-or-expel-window-left; }
-    Mod+BraceRight { consume-or-expel-window-right; }
-
-    Mod+Comma  { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
+    Mod+Comma  { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
 
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
@@ -168,7 +163,7 @@ binds {
     Mod+Ctrl+C { center-visible-columns; }
 
     Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Mod+Shift+0 { set-column-width "+10%"; }
 
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
