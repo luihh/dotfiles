@@ -1,0 +1,9 @@
+device_name = "MCHOSE Ace68-II"
+
+[[remap]]
+input = ["KEY_LEFTCTRL", "KEY_LEFTALT", "KEY_COMMA"]
+output = ["KEY_102ND"]
+
+[[remap]]
+input = ["KEY_LEFTCTRL", "KEY_LEFTALT", "KEY_DOT"]
+output = ["KEY_LEFTSHIFT", "KEY_102ND"]
