@@ -1,2 +1,5 @@
 [mgr]
 show_hidden = true
+show_symlink = true
+linemode = "size"
+ratio = [1, 5, 2]
