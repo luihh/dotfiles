@@ -1,14 +1,13 @@
 @import 'mocha.css';
 
 * {
-  font-family: Cascadia Code NF;
+  font-family: 'Cascadia Code', 'Symbols Nerd Font';
   font-size: 12px;
-  min-height: 0;
-  margin: 0px 5px;
+  padding: 0px 5px 0px 5px;
 }
 
 #waybar {
-  background: transparent;
+  background: @base;
   color: @text;
 }
 
@@ -21,97 +20,5 @@ tooltip label {
 }
 
 #tray {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  border-radius: 1rem;
-}
-
-#workspaces {
-  border-radius: 1rem;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 1rem;
-}
-
-#workspaces button {
-  color: @lavender;
-  border-radius: 1rem;
-  padding: 0.4rem;
-}
-
-#workspaces button.active {
-  color: @sky;
-  border-radius: 1rem;
-}
-
-#workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
-}
-
-#custom-music,
-#tray,
-#backlight,
-#clock,
-#temperature,
-#battery,
-#pulseaudio,
-#custom-lock,
-#custom-power {
-  background-color: @surface0;
-  padding: 0.2rem 1rem;
-  margin: 5px 0px;
-}
-
-#pulseaudio {
-  color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-}
-
-#clock {
-  color: @blue;
-}
-
-#temperature {
-  color: @teal;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
-}
-
-#battery {
-  color: @green;
-}
-
-#battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#backlight,
-#battery {
-  border-radius: 0;
-}
-
-#custom-music {
-  color: @mauve;
-  border-radius: 1rem;
-}
-
-#custom-lock {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @lavender;
-}
-
-#custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
-  color: @red;
+  border-top: 2px solid @blue;
 }

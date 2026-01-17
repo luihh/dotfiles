@@ -1,34 +1,14 @@
 {
   "output": "HDMI-A-1",
-  "layer": "top",
-  "position": "top",
-  "height": 30,
-  "width": 1600,
-  "spacing": 1,
+  "height": 26,
+  "spacing": 4,
   // Choose the order of the modules
-  "modules-left": ["sway/workspaces", "tray"],
-  "modules-center": ["custom/music"],
-  "modules-right": [
-    "pulseaudio",
-    "backlight",
-    "battery",
-    "clock",
-    "temperature"
-  ],
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "sort-by-name": true,
-    "warp-on-scroll": false,
-    "format": " {icon} ",
-    "format-icons": {
-      "default": "",
-      "urgent": ""
-    }
-  },
+  "modules-left": ["custom/music"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "pulseaudio", "battery", "temperature"],
   "tray": {
     "icon-size": 16,
-    "spacing": 10
+    "spacing": 5,
   },
   "custom/music": {
     "format": "  {}",
@@ -37,12 +17,12 @@
     "tooltip": false,
     "exec": "playerctl metadata --format='{{ title }}'",
     "on-click": "playerctl play-pause",
-    "max-length": 50
+    "max-length": 50,
   },
   "clock": {
     "interval": 60,
     "timezone": "America/Lima",
-    "format": "{:%F %R }",
+    "format": "{:%F | %I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -55,16 +35,16 @@
         "days": "<span color='#cdd6f4'><b>{}</b></span>",
         "weeks": "<span color='#94e2d5'>W{}</span>",
         "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
-      }
+        "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
   "temperature": {
     "interval": 3,
@@ -72,41 +52,39 @@
     "critical-threshold": 90,
     "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", ""],
   },
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon}",
     "format-charging": "",
     "format-plugged": "",
     "format-alt": "{icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", " "],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
-  "custom/lock": {
-    "tooltip": false,
-    "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-    "format": ""
-  },
-  "custom/power": {
-    "tooltip": false,
-    "on-click": "wlogout &",
-    "format": "襤"
-  }
 }
