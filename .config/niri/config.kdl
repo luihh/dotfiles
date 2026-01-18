@@ -21,12 +21,25 @@ output "DP-2" {
 
 layout {
     gaps 12
+    always-center-single-column true
 
     focus-ring {
         width 4
         active-gradient from="#89b4fa" to="#89dceb" angle=0
         inactive-color "#313244"
     }
+}
+
+workspace "workspace" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "miscellaneous" {
+    open-on-output "DP-2"
+}
+
+workspace "browser" {
+    open-on-output "DP-2"
 }
 
 cursor {
@@ -72,6 +85,25 @@ window-rule {
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    match title="Visual Studio Code"
+    open-maximized true
+    open-on-workspace "workspace"
+}
+
+window-rule {
+    match app-id=r#"vesktop$"#
+    match app-id=r#"discord$"#
+    open-maximized true
+    open-on-workspace "miscellaneous"
+}
+
+window-rule {
+    match app-id=r#"firefox$"#
+    open-maximized true
+    open-on-workspace "browser"
 }
 
 /-window-rule {
