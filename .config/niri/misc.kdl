@@ -1,0 +1,19 @@
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+overview {
+    backdrop-color "#11111b"
+}
+
+environment {
+    DISPLAY ":0"
+    QT_QPA_PLATFORM "wayland"
+}
+
+cursor {
+    xcursor-theme "catppuccin-mocha-dark-cursors"
+}

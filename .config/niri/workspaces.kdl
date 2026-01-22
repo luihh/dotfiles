@@ -1,0 +1,11 @@
+workspace "workspace" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "miscellaneous" {
+    open-on-output "DP-2"
+}
+
+workspace "browser" {
+    open-on-output "DP-2"
+}

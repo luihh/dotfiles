@@ -1,0 +1,10 @@
+layout {
+    gaps 12
+    always-center-single-column true
+
+    focus-ring {
+        width 4
+        active-gradient from="#89b4fa" to="#89dceb" angle=0
+        inactive-color "#313244"
+    }
+}

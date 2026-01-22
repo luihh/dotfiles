@@ -1,0 +1,12 @@
+input {
+    keyboard {
+        xkb {
+		        layout "latam"
+        }
+    }
+
+    mouse {
+        accel-profile "flat"
+        accel-speed -0.75
+    }
+}

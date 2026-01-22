@@ -1,0 +1,6 @@
+animations {
+    window-open {
+	      duration-ms 150
+	      curve "linear"
+    }
+}
