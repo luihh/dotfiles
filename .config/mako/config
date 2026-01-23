@@ -1,9 +1,28 @@
-# Colors
+font=Cascadia Code NF 10
+border-size=2
+border-radius=6
+padding=10
+margin=10
+default-timeout=5000
+max-icon-size=48
 
+# Colors
 background-color=#1e1e2e
 text-color=#cdd6f4
 border-color=#89b4fa
 progress-color=over #313244
 
+[urgency=low]
+border-color=#7c6f64
+text-color=#d4be98
+background-color=#282828
+
+[urgency=normal]
+border-color=#cd768a
+text-color=#d4be98
+background-color=#282828
+
 [urgency=high]
-border-color=#fab387
+border-color=#ea6962
+text-color=#ddc7a1
+background-color=#282828
